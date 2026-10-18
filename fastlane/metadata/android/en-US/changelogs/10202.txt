@@ -1,0 +1,6 @@
+Initial public release of MedWake v1.2.2:
+- Wake-gated lockscreen medication alarm
+- Gentle volume ramp-up (fade-in)
+- Monthly adherence calendar and streak counter
+- Alternating dosage schedules
+- Custom themes & wallpaper personalization

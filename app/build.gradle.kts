@@ -1,11 +1,36 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.util.Properties
+import java.io.FileInputStream
 
 plugins {
     alias(libs.plugins.android)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ksp)
 }
+
+// Load keystore.properties if present locally
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties()
+if (keystorePropertiesFile.exists()) {
+    FileInputStream(keystorePropertiesFile).use { keystoreProperties.load(it) }
+}
+
+// Resolve credentials from keystore.properties first, falling back to CI environment variables
+val resolvedStoreFile = keystoreProperties.getProperty("storeFile")
+    ?: System.getenv("SIGNING_STORE_FILE")
+val resolvedStorePassword = keystoreProperties.getProperty("storePassword")
+    ?: System.getenv("SIGNING_STORE_PASSWORD")
+val resolvedKeyAlias = keystoreProperties.getProperty("keyAlias")
+    ?: System.getenv("SIGNING_KEY_ALIAS")
+val resolvedKeyPassword = keystoreProperties.getProperty("keyPassword")
+    ?: System.getenv("SIGNING_KEY_PASSWORD")
+
+val hasReleaseSigning = !resolvedStoreFile.isNullOrBlank() &&
+    !resolvedStorePassword.isNullOrBlank() &&
+    !resolvedKeyAlias.isNullOrBlank() &&
+    !resolvedKeyPassword.isNullOrBlank() &&
+    file(resolvedStoreFile).exists()
 
 android {
     compileSdk = project.libs.versions.app.build.compileSDKVersion.get().toInt()
@@ -24,6 +49,27 @@ android {
         }
     }
 
+    // Critical for F-Droid & Reproducible Builds:
+    // Prevents AGP from embedding a Google-encrypted dependency metadata blob in the APK
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = file(resolvedStoreFile!!)
+                storePassword = resolvedStorePassword
+                keyAlias = resolvedKeyAlias
+                keyPassword = resolvedKeyPassword
+                enableV1Signing = true
+                enableV2Signing = true
+                enableV3Signing = true
+            }
+        }
+    }
+
     buildFeatures {
         viewBinding = true
         buildConfig = true
@@ -35,11 +81,15 @@ android {
             isDebuggable = true
         }
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 

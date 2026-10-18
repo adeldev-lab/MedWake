@@ -1,0 +1,9 @@
+MedWake is a privacy-first, 100% offline medication reminder app built around the Wake-Gated Alarm paradigm.
+
+Key Features:
+- Wake-Gated Alarms: Alarms only trigger when you first unlock your device after the scheduled time, preventing startled awakenings.
+- Gentle Volume Ramp-Up: Smoothly fades in alarm audio from 5% to 100% over a configurable duration (5–30s).
+- Monthly Adherence Calendar: Visual grid tracking taken and skipped doses, streaks, and adherence percentages.
+- Alternating Schedules: Supports flexible schedules including Mon/Wed/Fri/Sun, Tue/Thu/Sat, weekdays, or custom day bitmasks.
+- Visual Customization: Choose from 5 themes (Electric Blue, Emerald, Midnight, Sunset, Royal) and import custom wallpapers.
+- 100% Offline: Zero tracking, zero telemetry, no accounts required.
