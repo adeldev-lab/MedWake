@@ -1,0 +1,49 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="260dp"
+    android:height="160dp"
+    android:viewportWidth="260"
+    android:viewportHeight="160">
+
+    <!-- Left White Eyebrow Accent -->
+    <path
+        android:pathData="M30,30 L95,65 L85,80 L20,45 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Left Bold Eye Pupil -->
+    <path
+        android:pathData="M55,60 C75,65 95,95 85,115 C75,125 50,115 45,95 C40,80 45,65 55,60 Z"
+        android:fillColor="#111827" />
+
+    <!-- Right White Eyebrow Accent -->
+    <path
+        android:pathData="M230,30 L165,65 L175,80 L240,45 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Right Bold Eye Pupil -->
+    <path
+        android:pathData="M205,60 C185,65 165,95 175,115 C185,125 210,115 215,95 C220,80 215,65 205,60 Z"
+        android:fillColor="#111827" />
+
+    <!-- Center Nose / Expression Accent Lines -->
+    <path
+        android:pathData="M120,70 L125,82 M130,68 L130,82 M140,70 L135,82"
+        android:strokeWidth="3.5"
+        android:strokeColor="#1E3A8A"
+        android:strokeLineCap="round" />
+
+    <!-- Cute Nose Dot -->
+    <path
+        android:pathData="M130,95 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#93C5FD" />
+
+    <!-- Determined Cartoon Mouth / Teeth -->
+    <path
+        android:pathData="M80,125 C80,120 180,120 180,125 C180,145 165,150 130,150 C95,150 80,145 80,125 Z"
+        android:fillColor="#111827" />
+
+    <!-- White Gritted Teeth -->
+    <path
+        android:pathData="M100,128 L160,128 C155,142 145,144 130,144 C115,144 105,142 100,128 Z"
+        android:fillColor="#FFFFFF" />
+
+</vector>

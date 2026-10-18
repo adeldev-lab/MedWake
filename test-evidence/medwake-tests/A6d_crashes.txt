@@ -1,0 +1,19 @@
+08-25 19:33:58.849   355   355 D AndroidRuntime: >>>>>> START com.android.internal.os.ZygoteInit uid 0 <<<<<<
+08-25 19:33:58.855   355   355 I AndroidRuntime: Using default boot image
+08-25 19:33:58.855   355   355 I AndroidRuntime: Leaving lock profiling enabled
+08-25 19:34:01.237   547   547 E DisplayPowerController2[0]: failed to set up display white-balance: java.lang.IllegalStateException: cannot find sensor com.google.sensor.color
+08-25 19:34:01.241   547   576 E AppWidgetManager: java.lang.IllegalStateException: User 0 must be unlocked for widgets to be available
+08-25 19:34:01.275   547   562 W Binder  : java.lang.IllegalStateException: Cannot broadcast before boot completed
+08-25 19:34:01.316   547   547 E HealthConnectResContext: java.lang.IllegalStateException
+08-25 19:34:01.420   547   606 E AppOps  : java.lang.SecurityException: Specified package "android" under uid 1037 but it is not
+08-25 19:34:01.479   779   779 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+08-25 19:34:01.502   547   547 E StatsCompanionService: java.lang.IllegalStateException: IStatsd object should be null or dead
+08-25 19:34:01.540   758   758 W BatteryControllerGoogle: java.lang.SecurityException: Failed to find provider com.google.android.flipendo.api for user 0; expected to find a valid ContentProvider for this authority
+08-25 19:34:01.758   758   886 E AppWidgetManager: java.lang.IllegalStateException: User 0 must be unlocked for widgets to be available
+08-25 19:34:02.133   758   758 E BatteryInfoBroadcast: java.lang.SecurityException: Failed to find provider com.google.android.apps.turbo.estimated_time_remaining for user 0; expected to find a valid ContentProvider for this authority
+08-25 19:34:05.300  1655  1655 E AggregateFuture: java.lang.IllegalStateException: Setup parameters does not exist!
+08-25 19:34:05.699  1668  2010 E AwarenessRouterSyncMgr: java.util.concurrent.ExecutionException: java.lang.IllegalStateException: Account associated with identity was null
+08-25 19:34:05.699  1668  2010 E AwarenessRouterSyncMgr: Caused by: java.lang.IllegalStateException: Account associated with identity was null
+08-25 19:34:06.229  2096  2381 W RcsClientLib: java.lang.IllegalStateException: JibeService Not Initialized
+08-25 19:34:06.267  2096  2338 W RcsClientLib: java.lang.IllegalStateException: JibeService Not Initialized
+08-25 19:34:16.154   950  3641 D SettingsSliceProvider: java.lang.IllegalStateException: Invalid Slices key from path: wifi_calling

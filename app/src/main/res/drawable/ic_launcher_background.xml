@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Electric Blue gradient background (matches the default alarm theme) -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#2F6FED"
+                android:centerColor="#155EEF"
+                android:endColor="#1D4ED8" />
+        </shape>
+    </item>
+</layer-list>

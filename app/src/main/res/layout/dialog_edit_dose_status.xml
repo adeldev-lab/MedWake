@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvEditMedName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/on_surface"
+                tools:text="Vitamin D3" />
+
+            <TextView
+                android:id="@+id/tvEditScheduledTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="2dp"
+                tools:text="Scheduled for Aug 25, 07:00 AM" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvEditCurrentStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="#DCFCE7"
+            android:textColor="#15803D"
+            tools:text="✓ TAKEN" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Status To:"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetTaken"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="✓ Mark as Taken"
+        android:textSize="14sp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="#FFFFFF"
+        style="@style/Widget.Material3.Button"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetSkipped"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="✗ Mark as Skipped"
+        android:textSize="14sp"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetRescheduled"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="↺ Reschedule Dose..."
+        android:textSize="14sp"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenAlarmScreen"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="🔔 Open Full-Screen Alarm"
+        android:textSize="14sp"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:visibility="gone"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDeleteDoseRecord"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="🗑️ Delete Dose Record"
+        android:textSize="13sp"
+        android:textColor="#DC2626"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

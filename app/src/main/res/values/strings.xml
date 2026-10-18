@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MedWake</string>
+    <string name="take_now">Take Now</string>
+    <string name="skip">Skip</string>
+    <string name="reschedule">Reschedule</string>
+    <string name="snooze">Snooze</string>
+    <string name="alarm_active_title">Medication Due</string>
+    <string name="alarm_active_desc">Time to take your scheduled medication</string>
+    <string name="waiting_for_unlock">Waiting for device unlock</string>
+</resources>

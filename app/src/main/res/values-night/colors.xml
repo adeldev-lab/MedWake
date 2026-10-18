@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#10B981</color>
+    <color name="on_primary">#064E3B</color>
+    <color name="primary_container">#1F3D33</color>
+    <color name="on_primary_container">#A7F3D0</color>
+    <color name="surface">#121417</color>
+    <color name="on_surface">#E5E7EB</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <color name="card_stroke">#374151</color>
+    <color name="day_button_active_bg">#10B981</color>
+    <color name="day_button_active_text">#064E3B</color>
+    <color name="day_button_inactive_bg">#374151</color>
+    <color name="day_button_inactive_text">#9CA3AF</color>
+    <color name="dose_state_scheduled_bg">#164E63</color>
+    <color name="dose_state_scheduled_text">#67E8F9</color>
+    <!-- Theme palettes: Electric Blue (dark) -->
+    <color name="theme_blue_primary">#60A5FA</color>
+    <color name="theme_blue_on_primary">#0B1220</color>
+    <color name="theme_blue_primary_container">#1E3A8A</color>
+    <color name="theme_blue_on_primary_container">#DBEAFE</color>
+    <!-- Theme palettes: Emerald (dark) -->
+    <color name="theme_emerald_primary">#34D399</color>
+    <color name="theme_emerald_on_primary">#0B1220</color>
+    <color name="theme_emerald_primary_container">#064E3B</color>
+    <color name="theme_emerald_on_primary_container">#A7F3D0</color>
+    <!-- Theme palettes: Midnight (dark) -->
+    <color name="theme_midnight_primary">#334155</color>
+    <color name="theme_midnight_on_primary">#F8FAFC</color>
+    <color name="theme_midnight_primary_container">#1E293B</color>
+    <color name="theme_midnight_on_primary_container">#CBD5E1</color>
+    <!-- Theme palettes: Sunset (dark) -->
+    <color name="theme_sunset_primary">#FB7185</color>
+    <color name="theme_sunset_on_primary">#0B1220</color>
+    <color name="theme_sunset_primary_container">#881337</color>
+    <color name="theme_sunset_on_primary_container">#FFE4E6</color>
+    <!-- Theme palettes: Royal (dark) -->
+    <color name="theme_royal_primary">#A78BFA</color>
+    <color name="theme_royal_on_primary">#0B1220</color>
+    <color name="theme_royal_primary_container">#4C1D95</color>
+    <color name="theme_royal_on_primary_container">#EDE9FE</color>
+</resources>

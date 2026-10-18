@@ -1,0 +1,46 @@
+<resources>
+    <color name="primary">#006C50</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#89F8CE</color>
+    <color name="on_primary_container">#002116</color>
+    <color name="surface">#FBFDFA</color>
+    <color name="on_surface">#191C1B</color>
+    <color name="error">#BA1A1A</color>
+    <color name="alarm_background">#121212</color>
+    <color name="alarm_card">#1E1E1E</color>
+    <color name="alarm_text">#FFFFFF</color>
+    <color name="alarm_text_secondary">#B0B0B0</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="card_stroke">#E5E7EB</color>
+    <color name="day_button_active_bg">#006C4C</color>
+    <color name="day_button_active_text">#FFFFFF</color>
+    <color name="day_button_inactive_bg">#E5E7EB</color>
+    <color name="day_button_inactive_text">#6B7280</color>
+    <color name="dose_state_scheduled_bg">#E0F2FE</color>
+    <color name="dose_state_scheduled_text">#0369A1</color>
+    <!-- Theme palettes: Electric Blue -->
+    <color name="theme_blue_primary">#155EEF</color>
+    <color name="theme_blue_on_primary">#FFFFFF</color>
+    <color name="theme_blue_primary_container">#DBEAFE</color>
+    <color name="theme_blue_on_primary_container">#1E3A8A</color>
+    <!-- Theme palettes: Emerald -->
+    <color name="theme_emerald_primary">#006C4C</color>
+    <color name="theme_emerald_on_primary">#FFFFFF</color>
+    <color name="theme_emerald_primary_container">#A7F3D0</color>
+    <color name="theme_emerald_on_primary_container">#002116</color>
+    <!-- Theme palettes: Midnight -->
+    <color name="theme_midnight_primary">#0F172A</color>
+    <color name="theme_midnight_on_primary">#FFFFFF</color>
+    <color name="theme_midnight_primary_container">#CBD5E1</color>
+    <color name="theme_midnight_on_primary_container">#0F172A</color>
+    <!-- Theme palettes: Sunset -->
+    <color name="theme_sunset_primary">#E11D48</color>
+    <color name="theme_sunset_on_primary">#FFFFFF</color>
+    <color name="theme_sunset_primary_container">#FFE4E6</color>
+    <color name="theme_sunset_on_primary_container">#881337</color>
+    <!-- Theme palettes: Royal -->
+    <color name="theme_royal_primary">#7C3AED</color>
+    <color name="theme_royal_on_primary">#FFFFFF</color>
+    <color name="theme_royal_primary_container">#EDE9FE</color>
+    <color name="theme_royal_on_primary_container">#4C1D95</color>
+</resources>

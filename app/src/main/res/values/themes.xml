@@ -1,0 +1,47 @@
+<resources>
+    <style name="Theme.MedWake" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.MedWake.Alarm" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@color/alarm_background</item>
+        <item name="android:colorBackground">@color/alarm_background</item>
+        <item name="android:keepScreenOn">true</item>
+    </style>
+
+    <style name="ThemeOverlay.MedWake.ElectricBlue" parent="">
+        <item name="colorPrimary">@color/theme_blue_primary</item>
+        <item name="colorOnPrimary">@color/theme_blue_on_primary</item>
+        <item name="colorPrimaryContainer">@color/theme_blue_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/theme_blue_on_primary_container</item>
+    </style>
+    <style name="ThemeOverlay.MedWake.Emerald" parent="">
+        <item name="colorPrimary">@color/theme_emerald_primary</item>
+        <item name="colorOnPrimary">@color/theme_emerald_on_primary</item>
+        <item name="colorPrimaryContainer">@color/theme_emerald_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/theme_emerald_on_primary_container</item>
+    </style>
+    <style name="ThemeOverlay.MedWake.Midnight" parent="">
+        <item name="colorPrimary">@color/theme_midnight_primary</item>
+        <item name="colorOnPrimary">@color/theme_midnight_on_primary</item>
+        <item name="colorPrimaryContainer">@color/theme_midnight_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/theme_midnight_on_primary_container</item>
+    </style>
+    <style name="ThemeOverlay.MedWake.Sunset" parent="">
+        <item name="colorPrimary">@color/theme_sunset_primary</item>
+        <item name="colorOnPrimary">@color/theme_sunset_on_primary</item>
+        <item name="colorPrimaryContainer">@color/theme_sunset_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/theme_sunset_on_primary_container</item>
+    </style>
+    <style name="ThemeOverlay.MedWake.Royal" parent="">
+        <item name="colorPrimary">@color/theme_royal_primary</item>
+        <item name="colorOnPrimary">@color/theme_royal_on_primary</item>
+        <item name="colorPrimaryContainer">@color/theme_royal_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/theme_royal_on_primary_container</item>
+    </style>
+</resources>

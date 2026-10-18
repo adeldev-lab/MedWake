@@ -1,0 +1,70 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Robot Antenna -->
+    <path
+        android:pathData="M50,8 L50,18"
+        android:strokeWidth="3"
+        android:strokeColor="#94A3B8"
+        android:strokeLineCap="round" />
+
+    <!-- Antenna Glowing Light -->
+    <path
+        android:pathData="M50,7 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#00E5A3" />
+
+    <!-- Head / Body Capsule -->
+    <path
+        android:pathData="M50,18 C32,18 18,32 18,52 C18,72 32,86 50,86 C68,86 82,72 82,52 C82,32 68,18 50,18 Z"
+        android:fillColor="#F8FAFC" />
+
+    <path
+        android:pathData="M50,18 C32,18 18,32 18,52 C18,72 32,86 50,86 C68,86 82,72 82,52 C82,32 68,18 50,18 Z"
+        android:strokeWidth="2"
+        android:strokeColor="#CBD5E1" />
+
+    <!-- Mint Side Caps -->
+    <path
+        android:pathData="M15,46 C12,46 11,49 11,52 C11,55 12,58 15,58 Z"
+        android:fillColor="#006C4C" />
+    <path
+        android:pathData="M85,46 C88,46 89,49 89,52 C89,55 88,58 85,58 Z"
+        android:fillColor="#006C4C" />
+
+    <!-- Dark Screen Visor -->
+    <path
+        android:pathData="M50,30 C35,30 25,38 25,52 C25,64 35,72 50,72 C65,72 75,64 75,52 C75,38 65,30 50,30 Z"
+        android:fillColor="#0F172A" />
+
+    <!-- Glowing Cyan Expressive Eyes -->
+    <path
+        android:pathData="M35,50 C35,45 41,45 41,50"
+        android:strokeWidth="3.5"
+        android:strokeColor="#38BDF8"
+        android:strokeLineCap="round" />
+
+    <path
+        android:pathData="M59,50 C59,45 65,45 65,50"
+        android:strokeWidth="3.5"
+        android:strokeColor="#38BDF8"
+        android:strokeLineCap="round" />
+
+    <!-- Rosy Cheeks -->
+    <path
+        android:pathData="M32,58 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#55FB7185" />
+    <path
+        android:pathData="M68,58 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#55FB7185" />
+
+    <!-- Friendly Smile -->
+    <path
+        android:pathData="M46,60 C48,63 52,63 54,60"
+        android:strokeWidth="2"
+        android:strokeColor="#38BDF8"
+        android:strokeLineCap="round" />
+
+</vector>

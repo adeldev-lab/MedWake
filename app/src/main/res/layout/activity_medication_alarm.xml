@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutAlarmRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#155EEF">
+
+    <!-- User Imported Wallpaper Background -->
+    <ImageView
+        android:id="@+id/ivCustomBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <!-- Dark Semi-transparent Overlay for Text Legibility -->
+    <View
+        android:id="@+id/viewOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2A000000" />
+
+    <!-- Top Sound Indicator -->
+    <ImageView
+        android:id="@+id/ivSoundIndicator"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_lock_silent_mode_off"
+        android:background="@drawable/bg_speaker_btn"
+        android:padding="9dp"
+        app:tint="#155EEF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="Sound Active" />
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="56dp">
+
+        <TextView
+            android:id="@+id/tvHeaderSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TIME TO TAKE"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08" />
+
+        <TextView
+            android:id="@+id/tvHeaderLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PILLS"
+            android:textColor="#FFFFFF"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            android:layout_marginTop="-4dp" />
+
+        <!-- View Medications Pill Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewMedications"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:text="View medications ›"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="16dp"
+            android:backgroundTint="#660B2253"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_marginTop="6dp" />
+
+    </LinearLayout>
+
+    <!-- Expandable Detailed Medication Card (Collapsible) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardExpandedDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="#E60F172A"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="6dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvMedicationName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Vitamin D3"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1 tablet (2000 IU)"
+                android:textColor="#60A5FA"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/tvScheduledTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Scheduled for 07:00 AM"
+                android:textColor="#9CA3AF"
+                android:textSize="13sp"
+                android:layout_marginTop="6dp" />
+
+            <TextView
+                android:id="@+id/tvLateDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Overdue by 12m"
+                android:textColor="#FBBF24"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/tvNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Take with breakfast or water"
+                android:textColor="#E5E7EB"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Center Clean Artwork Placeholder Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layoutArtworkPlaceholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:cardBackgroundColor="#20FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="#50FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottomActions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_wallpaper_placeholder"
+                android:contentDescription="Artwork Placeholder" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom Wallpaper / Artwork"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personalize this background with any image in Settings › Alarm Appearance"
+                android:textColor="#D1D5DB"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Optional Pillo Robot Mascot View -->
+    <ImageView
+        android:id="@+id/ivAlarmMascot"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_pillo_mascot"
+        android:contentDescription="Pillo Mascot"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottomActions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Bottom Actions Container -->
+    <LinearLayout
+        android:id="@+id/layoutBottomActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="28dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Big Primary TAKE NOW Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTakeNow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="✓  TAKE NOW"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="28dp"
+            android:backgroundTint="#FDFDFB"
+            android:textColor="#155EEF"
+            app:elevation="4dp" />
+
+        <!-- Bottom Circular Options (Skip & Reschedule) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <!-- Skip Button with Circular Icon -->
+            <LinearLayout
+                android:id="@+id/btnSkipContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="4dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSkip"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:text="Skip"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textColor="#101828"
+                    app:elevation="0dp"
+                    android:stateListAnimator="@null"
+                    app:icon="@drawable/ic_alarm_skip"
+                    app:iconSize="18dp"
+                    app:iconTint="#101828"
+                    app:iconGravity="textStart"
+                    app:iconPadding="6dp"
+                    app:cornerRadius="24dp"
+                    android:backgroundTint="#FDFDFB"
+                    style="@style/Widget.Material3.Button.TonalButton" />
+            </LinearLayout>
+
+            <!-- Reschedule Button with Circular Icon -->
+            <LinearLayout
+                android:id="@+id/btnRescheduleContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="4dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReschedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:text="Reschedule"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textColor="#101828"
+                    app:elevation="0dp"
+                    android:stateListAnimator="@null"
+                    app:icon="@drawable/ic_alarm_reschedule"
+                    app:iconSize="18dp"
+                    app:iconTint="#101828"
+                    app:iconGravity="textStart"
+                    app:iconPadding="6dp"
+                    app:cornerRadius="24dp"
+                    android:backgroundTint="#FDFDFB"
+                    style="@style/Widget.Material3.Button.TonalButton" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

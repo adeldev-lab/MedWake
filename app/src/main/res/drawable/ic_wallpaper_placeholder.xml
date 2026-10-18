@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Outer Rounded Frame -->
+    <path
+        android:pathData="M24,20 C19.6,20 16,23.6 16,28 L16,92 C16,96.4 19.6,100 24,100 L96,100 C100.4,100 104,96.4 104,92 L104,28 C104,23.6 100.4,20 96,20 Z"
+        android:fillColor="#20FFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeColor="#80FFFFFF"
+        android:strokeLineCap="round" />
+
+    <!-- Sun / Glow Sphere -->
+    <path
+        android:pathData="M42,44 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0"
+        android:fillColor="#E0FFFFFF" />
+
+    <!-- Mountain Silhouette 1 -->
+    <path
+        android:pathData="M24,92 L46,62 L62,80 L76,66 L96,92 Z"
+        android:fillColor="#A0FFFFFF" />
+
+    <!-- Mountain Silhouette 2 (Foreground) -->
+    <path
+        android:pathData="M48,92 L66,72 L84,92 Z"
+        android:fillColor="#D0FFFFFF" />
+
+</vector>

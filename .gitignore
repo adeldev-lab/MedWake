@@ -1,0 +1,42 @@
+# ===== Gradle / Android =====
+.gradle/
+build/
+**/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+
+# ===== IDE =====
+.idea/
+*.iml
+.vscode/
+
+# ===== Kotlin =====
+.kotlin/
+
+# ===== Signing / secrets =====
+*.keystore
+*.jks
+keystore.properties
+secrets/
+.env
+*.enc
+
+# ===== Logs / OS =====
+*.log
+.DS_Store
+
+# ===== Third-party reference source (fossify-clock etc.) =====
+reference/
+
+# Signing credentials & Keystores (NEVER COMMIT)
+keystore.properties
+*.jks
+*.keystore
+*.p12
+
+# Root-level emulator screenshot dumps
+/*.png
