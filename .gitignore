@@ -40,3 +40,4 @@ keystore.properties
 
 # Root-level emulator screenshot dumps
 /*.png
+release-output/
