@@ -6,6 +6,7 @@
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-blue)](LICENSE)
 [![Android 8.0+](https://img.shields.io/badge/Android-8.0%2B-3DDC84)](https://developer.android.com/about/versions/oreo)
 [![No network permission](https://img.shields.io/badge/network-none-success)](PRIVACY.md)
+[![F-Droid](https://img.shields.io/badge/F--Droid-submitted-blue)](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/53573)
 
 <p align="center">
   <img src="docs/media/feature-graphic.png" alt="MedWake feature graphic" width="820">
@@ -110,9 +111,10 @@ published.
 
 ### F-Droid
 
-F-Droid inclusion is **in progress** (application ID
-`org.wakegated.medication`). Once the merge request is accepted, the listing
-will be available at:
+F-Droid submission is **open for review** in
+[fdroiddata !53573](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/53573)
+(application ID `org.wakegated.medication`). Once the merge request is
+accepted, the listing will be available at:
 
 ```
 https://f-droid.org/packages/org.wakegated.medication/
