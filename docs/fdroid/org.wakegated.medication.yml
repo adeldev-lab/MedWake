@@ -1,0 +1,29 @@
+Categories:
+  - Sports & Health
+License: GPL-3.0-only
+AuthorName: adeldev-lab
+SourceCode: https://github.com/adeldev-lab/MedWake
+IssueTracker: https://github.com/adeldev-lab/MedWake/issues
+Changelog: https://github.com/adeldev-lab/MedWake/releases
+AutoName: MedWake
+RepoType: git
+Repo: https://github.com/adeldev-lab/MedWake.git
+Builds:
+  - versionName: 1.2.3
+    versionCode: 10203
+    commit: b916ca0477cf2c0e5228947fe60528ead7304cd4
+    gradle:
+      - 'yes'
+    output: app/build/outputs/apk/release/app-release-unsigned.apk
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+UpdateCheckData: gradle.properties|VERSION_CODE=(\d+)|.|VERSION_NAME=(.*)
+CurrentVersion: 1.2.3
+CurrentVersionCode: 10203
+MaintainerNotes: |-
+  Unsigned builds from this commit are byte-identical across clean builds
+  (SHA-256 aca9c461d86ebf76083cef2979ea5c5a5f29c102873a75f0d45f8ef64fcea651),
+  and the signed upstream APK has an identical 702-entry payload.
+  apksigcopier 1.1.1 cannot verify AGP 9 zipflinger-compressed entries
+  ("Unsupported compresslevel"), so Binaries/AllowedAPKSigningKeys are
+  intentionally omitted for this first build.

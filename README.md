@@ -147,6 +147,8 @@ passwords.
 - [TESTING.md](TESTING.md) — test matrix and manual verification steps
 - [PRIVACY.md](PRIVACY.md) — permissions and data handling
 - [NOTICE.md](NOTICE.md) — upstream attribution
+- [fdroid recipe](docs/fdroid/org.wakegated.medication.yml) — the metadata
+  submitted to the F-Droid repository
 
 ## License and credits
 
