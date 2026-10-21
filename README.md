@@ -62,6 +62,10 @@ alarm, a notification or the power button — does **not** trigger MedWake.
   due while the phone is locked, rings on the first unlock, is snoozed, and
   rings again after the snooze when the phone is unlocked.
 
+> The demo uses an original two-tone chime. Samsung's "Glitter" tone is
+> proprietary and is not redistributed; by default MedWake uses the phone's
+> own system alarm sound, which on a Samsung can be Glitter.
+
 ---
 
 ## Features
