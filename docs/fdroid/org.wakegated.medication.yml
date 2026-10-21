@@ -16,15 +16,18 @@ Builds:
     subdir: app
     gradle:
       - 'yes'
+    output: build/outputs/apk/release/app-release-unsigned.apk
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
 UpdateCheckData: gradle.properties|VERSION_CODE=(\d+)|.|VERSION_NAME=(.*)
 CurrentVersion: 1.2.3
 CurrentVersionCode: 10203
 MaintainerNotes: |-
-  Unsigned builds from this commit are byte-identical across clean builds
-  (SHA-256 aca9c461d86ebf76083cef2979ea5c5a5f29c102873a75f0d45f8ef64fcea651),
-  and the signed upstream APK has an identical 702-entry payload.
+  Verified with the recipe's exact invocation (standalone Gradle 9.7 from
+  app/, no keystore, SOURCE_DATE_EPOCH=1792591467): unsigned APK SHA-256
+  aca9c461d86ebf76083cef2979ea5c5a5f29c102873a75f0d45f8ef64fcea651.
+  The signed upstream APK has the same 702-entry payload, and the GitHub
+  Actions signed build is 37639ce6187a45eca1c54ad0e82fa6131195d7898e10f07137e6200bbf15797c.
   apksigcopier 1.1.1 cannot verify AGP 9 zipflinger-compressed entries
   ("Unsupported compresslevel"), so Binaries/AllowedAPKSigningKeys are
   intentionally omitted for this first build.
