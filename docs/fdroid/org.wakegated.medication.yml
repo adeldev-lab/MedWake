@@ -1,27 +1,26 @@
 Categories:
-  - Medication
   - Alarm Clock
+  - Medication
 License: GPL-3.0-only
 AuthorName: adeldev-lab
 SourceCode: https://github.com/adeldev-lab/MedWake
 IssueTracker: https://github.com/adeldev-lab/MedWake/issues
 Changelog: https://github.com/adeldev-lab/MedWake/releases
+
 AutoName: MedWake
+
 RepoType: git
 Repo: https://github.com/adeldev-lab/MedWake.git
+
 Builds:
   - versionName: 1.2.3
     versionCode: 10203
     commit: b916ca0477cf2c0e5228947fe60528ead7304cd4
     subdir: app
     gradle:
-      - 'yes'
+      - yes
     output: build/outputs/apk/release/app-release-unsigned.apk
-AutoUpdateMode: Version
-UpdateCheckMode: Tags
-UpdateCheckData: gradle.properties|VERSION_CODE=(\d+)|.|VERSION_NAME=(.*)
-CurrentVersion: 1.2.3
-CurrentVersionCode: 10203
+
 MaintainerNotes: |-
   Verified with the recipe's exact invocation (standalone Gradle 9.7 from
   app/, no keystore, SOURCE_DATE_EPOCH=1792591467): unsigned APK SHA-256
@@ -31,3 +30,9 @@ MaintainerNotes: |-
   apksigcopier 1.1.1 cannot verify AGP 9 zipflinger-compressed entries
   ("Unsupported compresslevel"), so Binaries/AllowedAPKSigningKeys are
   intentionally omitted for this first build.
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+UpdateCheckData: gradle.properties|VERSION_CODE=(\d+)|.|VERSION_NAME=(.*)
+CurrentVersion: 1.2.3
+CurrentVersionCode: 10203
