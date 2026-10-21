@@ -51,8 +51,8 @@ class MedicationAdapter(
         // Stock quantity & Low-Stock warning
         if (med.stockQuantity != null) {
             val stockVal = med.stockQuantity
-            val unitStr = if (med.unit.isNotBlank()) " ${med.unit}" else ""
-            holder.binding.tvStock.text = "Stock: ${if (stockVal % 1.0 == 0.0) stockVal.toInt() else stockVal}$unitStr"
+            // Stock is a count of doses/tablets, not a dosage in µg/mg/IU.
+            holder.binding.tvStock.text = "Stock: ${if (stockVal % 1.0 == 0.0) stockVal.toInt() else stockVal}"
             holder.binding.tvStock.visibility = View.VISIBLE
 
             if (stockVal <= 5.0) {

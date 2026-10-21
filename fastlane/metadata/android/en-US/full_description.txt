@@ -1,9 +1,32 @@
-MedWake is a privacy-first, 100% offline medication reminder app built around the Wake-Gated Alarm paradigm.
+MedWake is a privacy-first, 100% offline medication reminder built around a simple idea: a dose becoming due should not wake you up. The alarm waits until you actually pick up and unlock your phone.
 
-Key Features:
-- Wake-Gated Alarms: Alarms only trigger when you first unlock your device after the scheduled time, preventing startled awakenings.
-- Gentle Volume Ramp-Up: Smoothly fades in alarm audio from 5% to 100% over a configurable duration (5–30s).
-- Monthly Adherence Calendar: Visual grid tracking taken and skipped doses, streaks, and adherence percentages.
-- Alternating Schedules: Supports flexible schedules including Mon/Wed/Fri/Sun, Tue/Thu/Sat, weekdays, or custom day bitmasks.
-- Visual Customization: Choose from 5 themes (Electric Blue, Emerald, Midnight, Sunset, Royal) and import custom wallpapers.
-- 100% Offline: Zero tracking, zero telemetry, no accounts required.
+HOW IT WORKS
+- At the scheduled time (for example 07:00) the dose becomes DUE. If the phone is locked or you are asleep, MedWake stays silent.
+- The first time you unlock the phone after that, MedWake shows a full-screen alarm (with an optional 0-120 second delay).
+- If you are already using the phone when the dose becomes due, the alarm rings right away.
+- If you snooze, the replacement dose waits for its new time and then rings on your next unlock.
+
+FEATURES
+- Wake-gated full-screen alarm with Take now, Skip, Snooze and reschedule.
+- The snooze length is configurable and is used by the alarm and notification actions.
+- Gentle volume ramp-up from 5% to 100% over 5-30 seconds, so the alarm does not startle you.
+- Monthly adherence calendar with taken, skipped and missed days, current streak and percentage.
+- Flexible schedules: every day, weekdays, weekends, Mon/Wed/Fri/Sun, Tue/Thu/Sat or any custom day combination.
+- Stock counts with a low-stock warning (∞ means stock is not tracked), and editable dose history.
+- Five alarm themes plus a robot mascot or your own wallpaper.
+- Backup and restore to a local JSON file.
+- Optional quick-open catch-up and safety-net reminders.
+- Works on Android 8.0+ (minSdk 26), optimized for Android 14-16 and Samsung One UI.
+
+PRIVACY
+- No internet permission, no account, no ads, no analytics, no cloud.
+- All data stays in the app's private database on your phone.
+- Usage access is optional and is used only to confirm that you really unlocked the phone (keyguard events). It is not used to read which apps you use.
+- Full privacy policy: https://github.com/adeldev-lab/MedWake/blob/main/PRIVACY.md
+
+PERMISSIONS
+MedWake asks for notifications, exact alarms, full-screen intents, battery optimization exemption and, optionally, usage access. Each one is explained in the app and in the privacy policy.
+
+MedWake is a reminder tool, not a medical device and not medical advice. The operating system or the user can always prevent an alarm from firing. Keep a backup reminder for critical medication.
+
+MedWake is free software under the GNU GPL v3.0. Source code and issues: https://github.com/adeldev-lab/MedWake

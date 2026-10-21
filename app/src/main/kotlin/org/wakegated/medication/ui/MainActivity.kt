@@ -37,6 +37,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
+import org.wakegated.medication.BuildConfig
 import org.wakegated.medication.R
 import org.wakegated.medication.data.entity.DoseEventEntity
 import org.wakegated.medication.data.entity.MedicationEntity
@@ -643,7 +644,7 @@ class MainActivity : AppCompatActivity() {
                 repository.getAllMedicationsFlow()
             ) { events, meds ->
                 val medsMap = meds.associateBy { it.medicationId }
-                events.mapNotNull { event ->
+                events.filter { it.state != DoseState.RESCHEDULED }.mapNotNull { event ->
                     medsMap[event.medicationId]?.let { med -> Pair(event, med) }
                 }
             }.collectLatest { pairedList ->
@@ -669,7 +670,10 @@ class MainActivity : AppCompatActivity() {
             ) { historyEvents, meds ->
                 val medsMap = meds.associateBy { it.medicationId }
                 val now = System.currentTimeMillis()
-                val pairedList = historyEvents.filter { !(it.state == DoseState.SCHEDULED && it.scheduledAt > now) }.mapNotNull { event ->
+                val pairedList = historyEvents.filter {
+                    it.state != DoseState.RESCHEDULED &&
+                        !(it.state == DoseState.SCHEDULED && it.scheduledAt > now)
+                }.mapNotNull { event ->
                     medsMap[event.medicationId]?.let { med -> Pair(event, med) }
                 }
 
@@ -1266,8 +1270,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         // ────────────────────────────────────────────────────────────────────────
-        // Batch 6: Ring Decision Log Debug Card
+        // Batch 6: Ring Decision Log Debug Card (debug builds only)
         // ────────────────────────────────────────────────────────────────────────
+        if (BuildConfig.DEBUG) {
+            binding.cardRingLog.visibility = View.VISIBLE
+        }
         binding.btnViewRingLog.setOnClickListener {
             val logContent = RingDecisionLog.readRecent(this, 100)
             MaterialAlertDialogBuilder(this)

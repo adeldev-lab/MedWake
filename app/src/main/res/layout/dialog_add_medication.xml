@@ -372,7 +372,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Current Stock Quantity (optional)"
+            android:hint="Current Stock Quantity (empty = ∞, not tracked)"
             android:layout_marginTop="10dp"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 

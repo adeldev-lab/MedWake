@@ -32,6 +32,9 @@ secrets/
 # ===== Third-party reference source (fossify-clock etc.) =====
 reference/
 
+# ===== Local test evidence (never ship screenshots/binaries in source) =====
+test-evidence/
+
 # Signing credentials & Keystores (NEVER COMMIT)
 keystore.properties
 *.jks

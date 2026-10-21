@@ -48,8 +48,17 @@ object AdherenceCalculator {
         cal.set(Calendar.MILLISECOND, 999)
         val monthEndMs = cal.timeInMillis
 
-        // Group events in this month by day of month (1..daysInMonth)
-        val monthEvents = allEvents.filter { it.scheduledAt in monthStartMs..monthEndMs }
+        // Group events in this month by day of month (1..daysInMonth).
+        // A RESCHEDULED event is the superseded original of a snooze; the replacement
+        // event carries the outcome, so counting both would mark the day as partial.
+        // Doses still scheduled for later today are not due yet either: ignoring them
+        // keeps today green once every dose that was due has been taken.
+        val now = System.currentTimeMillis()
+        val monthEvents = allEvents.filter {
+            it.scheduledAt in monthStartMs..monthEndMs &&
+                it.state != DoseState.RESCHEDULED &&
+                !(it.state == DoseState.SCHEDULED && it.scheduledAt > now)
+        }
         val dayGrouped = monthEvents.groupBy { event ->
             val eventCal = Calendar.getInstance().apply { timeInMillis = event.scheduledAt }
             eventCal.get(Calendar.DAY_OF_MONTH)

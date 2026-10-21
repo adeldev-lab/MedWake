@@ -318,7 +318,7 @@
                     android:insetBottom="0dp"
                     android:insetLeft="0dp"
                     android:insetRight="0dp"
-                    android:text="Reschedule"
+                    android:text="Snooze"
                     android:textSize="13sp"
                     android:textStyle="bold"
                     android:maxLines="1"

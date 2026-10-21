@@ -1,0 +1,6 @@
+MedWake 1.2.3
+- Snoozed doses are no longer counted twice; the day turns green after you take the replacement dose
+- Stock is shown as a count, not in µg/mg/IU; untracked stock shows ∞ with an on-screen legend
+- The alarm screen status bar now matches the selected alarm theme
+- Snooze uses the configured snooze minutes and opens the snooze options
+- Updated store description, screenshots and icon; F-Droid submission prepared

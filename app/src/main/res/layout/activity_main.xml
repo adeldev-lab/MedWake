@@ -120,6 +120,14 @@
                     android:textStyle="bold"
                     android:textColor="@color/on_surface" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="∞ = stock is not tracked"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="2dp" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvMedications"
                     android:layout_width="match_parent"
@@ -753,11 +761,13 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Ring Decision Log Debug Card -->
+                <!-- Ring Decision Log Debug Card (shown only in debug builds) -->
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRingLog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:visibility="gone"
                     app:cardElevation="2dp"
                     app:cardCornerRadius="12dp">
 

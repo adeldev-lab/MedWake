@@ -18,6 +18,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
@@ -227,8 +228,16 @@ class MedicationAlarmActivity : AppCompatActivity() {
             else -> Pair("#155EEF", "#155EEF") // Electric Blue default
         }
 
-        binding.layoutAlarmRoot.setBackgroundColor(Color.parseColor(bgColor))
+        val alarmColor = Color.parseColor(bgColor)
+        binding.layoutAlarmRoot.setBackgroundColor(alarmColor)
         binding.btnTakeNow.setTextColor(Color.parseColor(btnTextColor))
+        // Keep the system bars on the alarm's own palette instead of the host theme.
+        window.statusBarColor = alarmColor
+        window.navigationBarColor = alarmColor
+        WindowCompat.getInsetsController(window, window.decorView).apply {
+            isAppearanceLightStatusBars = false
+            isAppearanceLightNavigationBars = false
+        }
 
         // Mascot & Wallpaper Rendering Mode
         when (mascot) {
@@ -361,8 +370,12 @@ class MedicationAlarmActivity : AppCompatActivity() {
     }
 
     private fun showRescheduleDialog() {
+        // Use the snooze length configured in Settings for the first (default) option.
+        val prefs = getSharedPreferences(MedicationStateEvaluator.PREFS_NAME, Context.MODE_PRIVATE)
+        val snoozeMins = prefs.getInt(MedicationStateEvaluator.KEY_SNOOZE_MINUTES, 10).coerceIn(1, 120)
+        val snoozeLabel = if (snoozeMins == 1) "In 1 minute" else "In $snoozeMins minutes"
         val options = arrayOf(
-            "In 10 minutes",
+            snoozeLabel,
             "In 15 minutes",
             "In 30 minutes",
             "In 1 hour",
@@ -370,10 +383,10 @@ class MedicationAlarmActivity : AppCompatActivity() {
         )
 
         MaterialAlertDialogBuilder(this)
-            .setTitle("Reschedule Medication")
+            .setTitle("Snooze Medication")
             .setItems(options) { _, which ->
                 when (which) {
-                    0 -> snoozeByMinutes(10)
+                    0 -> snoozeByMinutes(snoozeMins)
                     1 -> snoozeByMinutes(15)
                     2 -> snoozeByMinutes(30)
                     3 -> snoozeByMinutes(60)

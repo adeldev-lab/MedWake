@@ -77,4 +77,45 @@ class AdherenceCalculatorTest {
         assertEquals(DayAdherenceLevel.SKIPPED, summary.dayStatusMap[6])
         assertEquals(DayAdherenceLevel.EMPTY, summary.dayStatusMap[10])
     }
+
+    @Test
+    fun testSnoozedEventDoesNotMakeTheDayPartial() {
+        val year = 2026
+        val month = Calendar.AUGUST
+
+        val cal = Calendar.getInstance().apply {
+            set(Calendar.YEAR, year)
+            set(Calendar.MONTH, month)
+            set(Calendar.DAY_OF_MONTH, 1)
+            set(Calendar.HOUR_OF_DAY, 7)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }
+
+        // 07:00 original was snoozed (RESCHEDULED), 07:10 replacement was taken.
+        val events = listOf(
+            DoseEventEntity(
+                doseEventId = 1,
+                medicationId = 1,
+                scheduledAt = cal.timeInMillis,
+                dueAt = cal.timeInMillis,
+                state = DoseState.RESCHEDULED
+            ),
+            DoseEventEntity(
+                doseEventId = 2,
+                medicationId = 1,
+                scheduledAt = cal.timeInMillis + 10 * 60_000L,
+                dueAt = cal.timeInMillis + 10 * 60_000L,
+                state = DoseState.TAKEN
+            )
+        )
+
+        val summary = AdherenceCalculator.computeMonthSummary(year, month, events)
+
+        assertEquals(1, summary.totalTaken)
+        assertEquals(0, summary.totalSkipped)
+        assertEquals(100, summary.adherencePercentage)
+        assertEquals(DayAdherenceLevel.PERFECT, summary.dayStatusMap[1])
+    }
 }
