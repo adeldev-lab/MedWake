@@ -12,9 +12,9 @@ Builds:
   - versionName: 1.2.3
     versionCode: 10203
     commit: b916ca0477cf2c0e5228947fe60528ead7304cd4
+    subdir: app
     gradle:
       - 'yes'
-    output: app/build/outputs/apk/release/app-release-unsigned.apk
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
 UpdateCheckData: gradle.properties|VERSION_CODE=(\d+)|.|VERSION_NAME=(.*)
